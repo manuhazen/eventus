@@ -1,0 +1,35 @@
+{% extends 'events/base_events.html' %}
+
+{% block title %} Eliminar {% endblock title %}
+
+{% block content %}
+
+    {% include "events/panel/navbar.html" %}
+
+    <div class="container">
+
+    <div class="page-header">
+            <h4>
+                <a href="{% url 'events_app:panel' %}" class="btn btn-success">
+                    <span class="glyphicon glyphicon-chevron-left"></span> Regresar
+                </a>
+                <strong>Eliminando: {{ event.name }}</strong>
+            </h4>
+    </div>
+
+        <div class="col-md-12">
+
+            <form action="{% url 'events_app:eliminar' event.id %}" role="form" method="POST">
+                {% csrf_token %}
+                <p class="">¿Desea eliminar el evento "{{ event.name }}"?</p>
+                <input type="submit" class="btn btn-danger">
+                <a href="{% url 'events_app:panel' %}" class="btn btn-default">No</a>
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+{% endblock content %}
