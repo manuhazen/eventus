@@ -1,3 +1,3 @@
 <h4>Eventus</h4> 
 
-e
+App web Django for managing events.
